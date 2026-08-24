@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f1f1ed"/>
+  <g opacity=".9">
+    <circle cx="597" cy="326" r="190" fill="none" stroke="#d7d8d1" stroke-width="1"/>
+    <circle cx="597" cy="326" r="136" fill="none" stroke="#d7d8d1" stroke-width="1"/>
+    <circle cx="597" cy="326" r="78" fill="none" stroke="#d7d8d1" stroke-width="1"/>
+  </g>
+  <g fill="#171817">
+    <circle cx="431" cy="260" r="4"/><circle cx="458" cy="209" r="3"/><circle cx="493" cy="164" r="5"/><circle cx="538" cy="195" r="3"/><circle cx="582" cy="139" r="4"/><circle cx="626" cy="181" r="6"/><circle cx="677" cy="152" r="3"/><circle cx="718" cy="218" r="5"/><circle cx="765" cy="247" r="3"/><circle cx="748" cy="308" r="6"/><circle cx="785" cy="359" r="4"/><circle cx="734" cy="401" r="3"/><circle cx="708" cy="460" r="5"/><circle cx="645" cy="445" r="3"/><circle cx="600" cy="500" r="5"/><circle cx="552" cy="458" r="3"/><circle cx="490" cy="481" r="6"/><circle cx="465" cy="418" r="4"/><circle cx="411" cy="386" r="3"/><circle cx="443" cy="327" r="5"/>
+  </g>
+  <g fill="#3559e0" opacity=".85"><circle cx="520" cy="278" r="11"/><circle cx="577" cy="242" r="8"/><circle cx="640" cy="271" r="13"/><circle cx="681" cy="324" r="8"/><circle cx="632" cy="369" r="12"/><circle cx="557" cy="390" r="7"/><circle cx="514" cy="343" r="9"/></g>
+  <g fill="none" stroke="#171817" stroke-width="1.5" opacity=".55"><path d="m431 260 89 18 57-36 63 29 41 53-49 45-75 21-43-47-83-83Z"/><path d="m493 164 84 78 49-61 92 37-37 106 104 35-77 101-76-91-32 131-43-110-67 91-25-63-54-32 103-43-71-16Z"/></g>
+  <text x="58" y="76" font-family="monospace" font-size="14" fill="#686864">POINT CLOUD / OPTIMIZED REPRESENTATION</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f2f3ef"/>
+  <g transform="translate(180 70)" fill="none" stroke="#171817" stroke-width="2">
+    <path d="M0 200 420 0l420 200-420 200Z"/><path d="M0 200v110l420 200 420-200V200M420 400v110"/>
+    <path d="m145 210 160-80 166 80-160 80Z" stroke="#3559e0"/><path d="m475 104 168 80-102 49-168-80Z"/><path d="m284 337 122-59 96 46-122 60Z"/>
+  </g>
+  <g fill="#3559e0"><circle cx="491" cy="280" r="7"/><circle cx="721" cy="231" r="7"/><circle cx="560" cy="454" r="7"/></g>
+  <g font-family="monospace" font-size="13" fill="#686864"><text x="405" y="255">QUERY: "WORK SURFACE"</text><text x="742" y="216">0.82</text><text x="580" y="472">0.76</text></g>
+</svg>

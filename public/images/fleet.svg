@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f2f3ef"/>
+  <g stroke="#d2d5ce" stroke-width="1"><path d="M0 135h1200M0 270h1200M0 405h1200M0 540h1200"/><path d="M200 0v675M400 0v675M600 0v675M800 0v675M1000 0v675"/></g>
+  <g fill="none" stroke="#171817" stroke-width="2"><path d="M160 480 350 300 570 390 770 185 1015 330"/><path stroke-dasharray="7 8" d="M215 155 350 300 720 515 1015 330"/></g>
+  <g fill="#fff" stroke="#171817" stroke-width="3"><circle cx="160" cy="480" r="19"/><circle cx="350" cy="300" r="25"/><circle cx="570" cy="390" r="17"/><circle cx="770" cy="185" r="22"/><circle cx="1015" cy="330" r="28"/><circle cx="215" cy="155" r="14"/><circle cx="720" cy="515" r="16"/></g>
+  <g fill="#3559e0"><circle cx="350" cy="300" r="8"/><circle cx="770" cy="185" r="7"/><circle cx="1015" cy="330" r="9"/></g>
+  <g font-family="monospace" font-size="13" fill="#666"><text x="120" y="525">AGENT_01</text><text x="315" y="350">LEADER</text><text x="980" y="380">AGENT_06</text></g>
+</svg>

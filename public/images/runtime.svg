@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f2f3ef"/>
+  <g fill="none" stroke="#d2d5ce"><path d="M140 160h920M140 270h920M140 380h920M140 490h920"/><path d="M240 100v460M420 100v460M600 100v460M780 100v460M960 100v460"/></g>
+  <g fill="#fff" stroke="#171817" stroke-width="2"><rect x="167" y="205" width="146" height="130"/><rect x="527" y="315" width="146" height="130"/><rect x="887" y="205" width="146" height="130"/></g>
+  <g fill="none" stroke="#171817" stroke-width="2"><path d="M313 270h214M673 380l214-110"/><path d="m505 258 22 12-22 12M865 265l22 5-16 15"/></g>
+  <g fill="#3559e0"><rect x="181" y="219" width="118" height="8"/><rect x="541" y="329" width="92" height="8"/><rect x="901" y="219" width="71" height="8"/></g>
+  <g font-family="monospace" font-size="13" fill="#555"><text x="184" y="265">OBSERVE</text><text x="544" y="375">SCHEDULE</text><text x="904" y="265">EXECUTE</text><text x="527" y="510">LATENCY BUDGET / 24MS</text></g>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f2f3ef"/>
+  <g stroke="#d2d5ce" stroke-width="1"><path d="M0 112h1200M0 225h1200M0 337h1200M0 450h1200M0 562h1200"/><path d="M150 0v675M300 0v675M450 0v675M600 0v675M750 0v675M900 0v675M1050 0v675"/></g>
+  <path d="m185 510 330-310 455 270" fill="none" stroke="#171817" stroke-width="3"/>
+  <path d="M515 200v270H185M515 200l455 270H515" fill="#3559e0" fill-opacity=".05" stroke="#3559e0" stroke-width="2" stroke-dasharray="9 9"/>
+  <g fill="#fff" stroke="#171817" stroke-width="2"><rect x="474" y="170" width="82" height="59"/><circle cx="515" cy="200" r="12"/><rect x="725" y="340" width="116" height="87"/><rect x="300" y="335" width="92" height="135"/></g>
+  <g font-family="monospace" font-size="13" fill="#686864"><text x="480" y="157">CAM_01</text><text x="728" y="330">OBJECT / 0.94</text><text x="302" y="325">OBJECT / 0.87</text><text x="1020" y="620">31 FPS</text></g>
+</svg>

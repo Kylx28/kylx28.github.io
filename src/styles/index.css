@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply m-0 bg-white font-sans text-ink antialiased; }
+  ::selection { @apply bg-ink text-white; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+}
+
+@layer components {
+  .page-shell { @apply mx-auto w-full max-w-[1440px] px-7 sm:px-12 lg:px-20 xl:px-24; }
+  .eyebrow { @apply font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted; }
+  .text-link { @apply inline-flex items-center gap-1.5 border-b border-ink/30 pb-0.5 text-sm font-medium transition-colors hover:border-ink; }
+  .section-rule { @apply border-t border-line; }
+}
+
+@keyframes scan {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(500%); }
+}
+
+.viewer-scan { animation: scan 3.2s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

@@ -14,30 +14,30 @@ const shoeCaptures = [
   },
 ]
 
-const readingList = [
-  {
-    status: 'Currently reading',
-    books: [{ title: 'Runaway Horses', author: 'Yukio Mishima' }],
-  },
-  {
-    status: 'Finished',
-    books: [
-      { title: 'Crime and Punishment', author: 'Fyodor Dostoevsky' },
-      { title: 'Anna Karenina', author: 'Leo Tolstoy' },
-      { title: 'Spring Snow', author: 'Yukio Mishima' },
-      { title: 'Bleeding Edge', author: 'Thomas Pynchon'}
-    ],
-  },
-  {
-    status: 'To read',
-    books: [
-      { title: 'Pnin', author: 'Vladimir Nabokov' },
-      { title: 'Pale Fire', author: 'Vladimir Nabokov' },
-      { title: 'Notes from Underground', author: 'Fyodor Dostoevsky' },
-      { title: 'Against the Day', author: 'Thomas Pynchon'},
-    ],
-  },
-]
+// const readingList = [
+//   {
+//     status: 'Currently reading',
+//     books: [{ title: 'Runaway Horses', author: 'Yukio Mishima' }],
+//   },
+//   {
+//     status: 'Finished',
+//     books: [
+//       { title: 'Crime and Punishment', author: 'Fyodor Dostoevsky' },
+//       { title: 'Anna Karenina', author: 'Leo Tolstoy' },
+//       { title: 'Spring Snow', author: 'Yukio Mishima' },
+//       { title: 'Bleeding Edge', author: 'Thomas Pynchon'}
+//     ],
+//   },
+//   {
+//     status: 'To read',
+//     books: [
+//       { title: 'Pnin', author: 'Vladimir Nabokov' },
+//       { title: 'Pale Fire', author: 'Vladimir Nabokov' },
+//       { title: 'Notes from Underground', author: 'Fyodor Dostoevsky' },
+//       { title: 'Against the Day', author: 'Thomas Pynchon'},
+//     ],
+//   },
+// ]
 
 export function InterestsPage() {
   const { search } = useLocation()

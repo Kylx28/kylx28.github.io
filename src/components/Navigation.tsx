@@ -17,18 +17,23 @@ export function Navigation() {
     if (target) window.setTimeout(() => document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' }), 0)
   }
 
+  const returnToTop = () => {
+    window.setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0)
+  }
+
   return (
     <>
       <Link
         to="/"
-        className="fixed left-5 top-5 z-50 bg-white px-3 py-2 text-sm font-semibold tracking-tight sm:left-7 sm:top-7"
+        onClick={returnToTop}
+        className="fixed left-5 top-5 z-50 w-[116px] border border-ink bg-white px-4 py-3 text-center text-sm font-semibold tracking-tight lg:left-7 lg:top-7"
         aria-label="Go to homepage"
       >
         {profile.name}
       </Link>
 
       <nav
-        className="fixed bottom-5 left-1/2 z-50 flex -translate-x-1/2 border border-ink bg-white shadow-[3px_3px_0_0_#151515] sm:bottom-auto sm:left-auto sm:right-5 sm:top-1/2 sm:-translate-x-0 sm:-translate-y-1/2 sm:flex-col sm:shadow-[3px_3px_0_0_#151515] lg:right-7"
+        className="fixed bottom-5 left-1/2 z-50 flex -translate-x-1/2 border border-ink bg-white shadow-[3px_3px_0_0_#151515] lg:bottom-auto lg:left-7 lg:top-[84px] lg:w-[116px] lg:-translate-x-0 lg:flex-col"
         aria-label="Primary navigation"
       >
         {links.map((link, index) => (
@@ -36,7 +41,7 @@ export function Navigation() {
             key={link.label}
             to={link.href}
             onClick={() => scrollTo(link.label)}
-            className={`relative grid h-11 min-w-[78px] place-items-center px-3 font-mono text-[9px] uppercase tracking-[0.12em] transition-colors sm:h-14 sm:w-20 ${index ? 'border-l border-line sm:border-l-0 sm:border-t' : ''} ${link.active ? 'bg-ink text-white' : 'text-muted hover:bg-paper hover:text-ink'}`}
+            className={`relative grid h-11 min-w-[78px] place-items-center px-3 font-mono text-[9px] uppercase tracking-[0.12em] transition-colors lg:h-12 lg:w-full ${index ? 'border-l border-line lg:border-l-0 lg:border-t' : ''} ${link.active ? 'bg-ink text-white' : 'text-muted hover:bg-paper hover:text-ink'}`}
           >
             {link.label}
           </Link>

@@ -1,5 +1,5 @@
 import { PackedSplats, SparkRenderer, SplatLoader, SplatMesh } from '@sparkjsdev/spark'
-import { RotateCcw } from 'lucide-react'
+import { Pause, Play, RotateCcw } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
@@ -8,7 +8,10 @@ export default function GaussianSplatCanvas({ src, onError }: { src: string; onE
   const containerRef = useRef<HTMLDivElement>(null)
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null)
   const controlsRef = useRef<OrbitControls | null>(null)
+  const resetPositionRef = useRef(new THREE.Vector3(1, -4, 2))
+  const resetTargetRef = useRef(new THREE.Vector3())
   const [progress, setProgress] = useState(0)
+  const [isSpinning, setIsSpinning] = useState(true)
 
   useEffect(() => {
     const container = containerRef.current
@@ -47,10 +50,18 @@ export default function GaussianSplatCanvas({ src, onError }: { src: string; onE
         controls = new OrbitControls(camera, renderer.domElement)
         controls.enableDamping = true
         controls.dampingFactor = 0.07
+        controls.autoRotate = true
+        controls.autoRotateSpeed = 0.65
         controls.target.set(0, 0, 0)
         controlsRef.current = controls
 
-        spark = new SparkRenderer({ renderer })
+        spark = new SparkRenderer({
+          renderer,
+          // Match the classic gsplat viewer's projection and compositing defaults.
+          preBlurAmount: 0.3,
+          maxStdDev: 3,
+          sortRadial: false,
+        })
         scene.add(spark)
 
         const loader = new SplatLoader()
@@ -71,9 +82,24 @@ export default function GaussianSplatCanvas({ src, onError }: { src: string; onE
           splats.dispose()
           return
         }
+        splats.maxSh = 3
         splats.quaternion.set(1, 0, 0, 0)
-        splats.position.set(0, 0, -1)
         scene.add(splats)
+        splats.updateMatrixWorld(true)
+
+        const bounds = splats.getBoundingBox(true).applyMatrix4(splats.matrixWorld)
+        const center = bounds.getCenter(new THREE.Vector3())
+        const size = bounds.getSize(new THREE.Vector3())
+        const radius = Math.max(size.length() * 0.5, 0.25)
+        const cameraPosition = center.clone().add(new THREE.Vector3(radius * 1.15, -radius * 2.1, radius * 0.9))
+        controls.target.copy(center)
+        camera.position.copy(cameraPosition)
+        camera.near = Math.max(radius / 100, 0.001)
+        camera.far = Math.max(radius * 20, 100)
+        camera.updateProjectionMatrix()
+        controls.update()
+        resetPositionRef.current.copy(cameraPosition)
+        resetTargetRef.current.copy(center)
         setProgress(100)
 
         renderer.setAnimationLoop(() => {
@@ -113,9 +139,16 @@ export default function GaussianSplatCanvas({ src, onError }: { src: string; onE
     const camera = cameraRef.current
     const controls = controlsRef.current
     if (!camera || !controls) return
-    camera.position.set(1, -4, 2)
-    controls.target.set(0, 0, 0)
+    camera.position.copy(resetPositionRef.current)
+    controls.target.copy(resetTargetRef.current)
     controls.update()
+  }
+
+  const toggleSpin = () => {
+    const controls = controlsRef.current
+    if (!controls) return
+    controls.autoRotate = !controls.autoRotate
+    setIsSpinning(controls.autoRotate)
   }
 
   return (
@@ -128,7 +161,12 @@ export default function GaussianSplatCanvas({ src, onError }: { src: string; onE
           </div>
         </div>
       )}
-      <button onClick={reset} className="absolute bottom-3 right-3 z-10 flex items-center gap-2 border border-white/20 bg-black/65 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.1em] text-white backdrop-blur-sm hover:bg-black" aria-label="Reset 3D camera"><RotateCcw size={12} /> Reset view</button>
+      <div className="absolute bottom-3 right-3 z-10 flex">
+        <button onClick={toggleSpin} className="flex items-center gap-2 border border-white/20 bg-black/65 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.1em] text-white backdrop-blur-sm hover:bg-black" aria-label={isSpinning ? 'Pause automatic rotation' : 'Resume automatic rotation'}>
+          {isSpinning ? <Pause size={12} /> : <Play size={12} />} {isSpinning ? 'Pause spin' : 'Start spin'}
+        </button>
+        <button onClick={reset} className="flex items-center gap-2 border border-l-0 border-white/20 bg-black/65 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.1em] text-white backdrop-blur-sm hover:bg-black" aria-label="Reset 3D camera"><RotateCcw size={12} /> Reset view</button>
+      </div>
     </div>
   )
 }

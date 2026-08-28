@@ -26,6 +26,23 @@ const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`
 
 export const projects: Project[] = [
   {
+    slug: 'gaussian-splatting-pipeline',
+    title: 'Object-Centric Gaussian Splatting Pipeline',
+    description: 'An end-to-end pipeline for reconstructing isolated objects as interactive 3D Gaussian splats from handheld image captures.',
+    year: '2026',
+    categories: ['Computer Vision', 'AI / ML'],
+    tags: ['Python', 'COLMAP', 'SAM 2', 'gsplat'],
+    status: 'In Progress',
+    featured: true,
+    thumbnail: asset('images/onitsuka-tiger.jpg'),
+    links: [{ label: 'View interactive shoe splat', url: '/interests?view=onitsuka-tiger' }],
+    sections: [
+      { title: 'Overview', body: 'Built a reproducible capture-to-web workflow for reconstructing individual objects from a handheld image sequence and publishing the result as an interactive Gaussian splat.' },
+      { title: 'Pipeline', body: 'The pipeline combines COLMAP camera reconstruction, SAM 2 foreground masks, masked gsplat training, and multi-view pruning to remove background floaters while preserving object detail.' },
+      { title: 'Web delivery', body: 'Pruned PLY output is transcoded to the compact SPZ format and loaded on demand in the browser. The interactive Onitsuka Tiger capture is available in the Other Interests section.' },
+    ],
+  },
+  {
     slug: 'skin-cancer-classifier',
     title: 'Skin Cancer Classification',
     description: 'Ensemble convolutional neural network for skin lesion classification on the HAM10000 dataset.',

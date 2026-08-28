@@ -10,7 +10,7 @@
 }
 
 @layer components {
-  .page-shell { @apply mx-auto w-full max-w-[1440px] px-7 sm:px-12 lg:px-20 xl:px-24; }
+  .page-shell { @apply mx-auto w-full max-w-[1440px] px-7 sm:px-12 lg:pl-44 lg:pr-20 xl:pl-48 xl:pr-24; }
   .eyebrow { @apply font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted; }
   .text-link { @apply inline-flex items-center gap-1.5 border-b border-ink/30 pb-0.5 text-sm font-medium transition-colors hover:border-ink; }
   .section-rule { @apply border-t border-line; }

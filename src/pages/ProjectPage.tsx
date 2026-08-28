@@ -64,7 +64,7 @@ export function ProjectPage() {
       {project.links?.length ? (
         <section className="border-y border-ink py-8">
           <p className="eyebrow mb-4">Project links</p>
-          <div className="flex flex-wrap gap-5">{project.links.map((link) => <a key={link.label} href={link.url} target="_blank" rel="noreferrer" className="text-link">{link.label}<ArrowUpRight size={13} /></a>)}</div>
+          <div className="flex flex-wrap gap-5">{project.links.map((link) => link.url.startsWith('/') ? <Link key={link.label} to={link.url} className="text-link">{link.label}<ArrowUpRight size={13} /></Link> : <a key={link.label} href={link.url} target="_blank" rel="noreferrer" className="text-link">{link.label}<ArrowUpRight size={13} /></a>)}</div>
         </section>
       ) : null}
     </article>

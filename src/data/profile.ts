@@ -2,19 +2,24 @@ export interface BioPart {
   text: string
   emphasis?: boolean
   href?: string
+  newLine?: boolean
 }
 
 export const profile = {
   name: 'Kyle Sabado',
   // role: 'Machine Learning · Robotics · AI Systems',
   bio: [
-    { text: 'Fourth year computer engineering student at the ' },
+    { text: 'Final Year Computer Engineering Undergraduate @ ' },
     { text: 'University of Toronto', emphasis: true },
-    { text: '. Currently researching multi agent pathfinding @ ' },
-    { text: 'MARMoT Lab', emphasis: true, href: 'https://marmotlab.org/index.html' },
-    { text: '. Previously an AI networking intern @ ' },
-    { text: 'Huawei Canada', emphasis: true },
     { text: '.' },
+    { text: 'Currently: Multi-Agent Reinforcement Learning @ ', newLine: true },
+    { text: 'MARMoT Lab (NUS)', emphasis: true, href: 'https://marmotlab.org/index.html' },
+    { text: '.' },
+    { text: 'Previously: AI Networking @ ', newLine: true },
+    { text: 'Huawei Canada', emphasis: true, href: 'https://www.linkedin.com/company/huawei-technologies-canada-co-ltd/' },
+    { text: ', 6G Networks Research @ ' },
+    { text: 'WIRLab (UofT)', emphasis: true, href: 'https://www.wirlab.utoronto.ca/'},
+    { text: '.'}
   ] as BioPart[],
   affiliation: 'Computer Engineering @ University of Toronto. Robotics Research @ MARMoT Lab.',
   interests: ['Robotics', 'Machine Learning', 'AI Systems'],

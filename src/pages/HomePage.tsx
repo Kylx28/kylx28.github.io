@@ -1,5 +1,5 @@
 import { ArrowDown, ArrowUpRight } from 'lucide-react'
-import { useEffect } from 'react'
+import { Fragment, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { CVContent } from '../components/CVContent'
 import { ProjectIndex } from '../components/ProjectIndex'
@@ -21,12 +21,17 @@ export function HomePage() {
             <div className="p-6 sm:p-9 lg:p-12">
               <h1 className="text-5xl font-medium tracking-[-0.045em] sm:text-6xl">{profile.name}</h1>
               <p className="mt-7 max-w-3xl text-lg leading-8 text-muted">
-                {profile.bio.map((part, index) => part.href ? (
-                  <a key={index} href={part.href} target="_blank" rel="noreferrer" className="font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink">{part.text}</a>
-                ) : part.emphasis ? (
-                  <strong key={index} className="font-semibold text-ink">{part.text}</strong>
-                ) : (
-                  <span key={index}>{part.text}</span>
+                {profile.bio.map((part, index) => (
+                  <Fragment key={index}>
+                    {part.newLine && <br />}
+                    {part.href ? (
+                      <a href={part.href} target="_blank" rel="noreferrer" className="font-semibold text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink">{part.text}</a>
+                    ) : part.emphasis ? (
+                      <strong className="font-semibold text-ink">{part.text}</strong>
+                    ) : (
+                      <span>{part.text}</span>
+                    )}
+                  </Fragment>
                 ))}
               </p>
             </div>

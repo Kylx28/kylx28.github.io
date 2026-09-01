@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { Navigation } from './components/Navigation'
 import { Footer } from './components/Footer'
@@ -10,6 +11,11 @@ import { InterestsPage } from './pages/InterestsPage'
 
 function App() {
   const location = useLocation()
+
+  useEffect(() => {
+    // Warm the large renderer bundle while the visitor is browsing the home page.
+    void import('./components/GaussianSplatCanvas')
+  }, [])
 
   return (
     <div className="min-h-screen bg-white pb-16 sm:pb-0">

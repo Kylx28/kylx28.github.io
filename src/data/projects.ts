@@ -88,7 +88,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'mapf',
-    title: 'Continuous Multi Agent Pathfinding',
+    title: 'Multi Agent Pathfinding in Continuous Space Using Reinforcement Learning',
     description: 'Researching residual reinforcement learning for multi agent pathfinding in continuous-space.',
     year: '2026',
     categories: ['Robotics', 'AI / ML'],

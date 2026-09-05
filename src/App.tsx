@@ -18,7 +18,7 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white pb-16 sm:pb-0">
+    <div className="min-h-screen bg-paper pb-16 sm:pb-0">
       <Navigation />
       <AnimatePresence mode="wait">
         <motion.main

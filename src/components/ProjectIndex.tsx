@@ -24,9 +24,9 @@ export function ProjectIndex() {
         <h2 className="text-2xl font-medium tracking-[-0.03em] sm:text-3xl">Projects</h2>
       </div>
 
-      <div className="grid gap-x-7 gap-y-12 pt-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-9 xl:gap-y-14">
-        {sortedProjects.map((project) => (
-          <article key={project.slug} className="min-w-0">
+      <div className="grid gap-x-7 gap-y-12 pt-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-9 xl:gap-y-14 2xl:grid-cols-4">
+        {sortedProjects.map((project, index) => (
+          <article key={project.slug} className={`min-w-0 ${index === 0 ? 'sm:col-span-2' : ''}`}>
             <Link to={`/project/${project.slug}`} className="group block">
               <ProjectVisual project={project} />
             </Link>
@@ -36,16 +36,16 @@ export function ProjectIndex() {
                 <h3 className="text-lg font-medium tracking-[-0.025em] sm:text-xl">
                   <Link to={`/project/${project.slug}`} className="hover:underline hover:underline-offset-4">{project.title}</Link>
                 </h3>
-                <span className="mt-1 shrink-0 font-mono text-[10px] text-muted">{project.year}</span>
+                <span className="mt-1 shrink-0 font-mono text-xs text-muted">{project.year}</span>
               </div>
 
               <p className="mt-3 text-sm leading-6 text-muted">{project.description}</p>
 
               <div className="mt-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-3 border-t border-line pt-3">
-                <div className="flex flex-wrap gap-x-3 gap-y-1 font-mono text-[9px] uppercase tracking-[0.08em] text-muted">
+                <div className="flex flex-wrap gap-x-3 gap-y-1 font-mono text-[11px] tracking-[0.01em] text-muted">
                   {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
                 </div>
-                <Link to={`/project/${project.slug}`} className="inline-flex items-center gap-1 text-xs font-medium hover:underline hover:underline-offset-4">
+                <Link to={`/project/${project.slug}`} className="inline-flex items-center gap-1 text-xs font-medium text-signal hover:underline hover:underline-offset-4">
                   Read more <ArrowUpRight size={12} />
                 </Link>
               </div>

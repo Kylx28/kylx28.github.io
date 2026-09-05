@@ -4,15 +4,15 @@
 
 @layer base {
   html { scroll-behavior: smooth; }
-  body { @apply m-0 bg-white font-sans text-ink antialiased; }
+  body { @apply m-0 bg-paper font-sans text-ink antialiased; }
   ::selection { @apply bg-ink text-white; }
   button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 @layer components {
-  .page-shell { @apply mx-auto w-full max-w-[1440px] px-7 sm:px-12 lg:pl-44 lg:pr-20 xl:pl-48 xl:pr-24; }
-  .eyebrow { @apply font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted; }
-  .text-link { @apply inline-flex items-center gap-1.5 border-b border-ink/30 pb-0.5 text-sm font-medium transition-colors hover:border-ink; }
+  .page-shell { @apply mx-auto w-full max-w-[1800px] px-7 sm:px-12 lg:px-10 xl:px-14 2xl:px-16; }
+  .eyebrow { @apply font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-muted; }
+  .text-link { @apply inline-flex items-center gap-1.5 border-b border-signal/35 pb-0.5 text-sm font-medium text-signal transition-colors hover:border-signal; }
   .section-rule { @apply border-t border-line; }
 }
 

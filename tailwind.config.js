@@ -4,15 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#151515',
-        muted: '#6f6f6b',
-        line: '#deded8',
-        paper: '#f7f7f4',
-        signal: '#3559e0',
+        ink: '#24231f',
+        muted: '#716f68',
+        line: '#d8d2c6',
+        paper: '#f7f5f0',
+        surface: '#fbfaf6',
+        signal: '#315b9d',
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        mono: ['IBM Plex Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+        mono: ['DM Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
     },
   },

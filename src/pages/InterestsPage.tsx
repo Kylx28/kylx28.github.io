@@ -76,7 +76,7 @@ export function InterestsPage() {
               key={shoe.id}
               type="button"
               onClick={() => setSelectedShoe(shoe.id)}
-              className={`flex min-w-[190px] items-center gap-4 border-r border-line px-4 py-4 text-left transition-colors ${activeShoe.id === shoe.id ? 'bg-ink text-white' : 'bg-white hover:bg-paper'}`}
+              className={`flex min-w-[190px] items-center gap-4 border-r border-line px-4 py-4 text-left transition-colors ${activeShoe.id === shoe.id ? 'bg-signal text-white' : 'bg-surface hover:bg-paper'}`}
               aria-pressed={activeShoe.id === shoe.id}
             >
               <span className={`font-mono text-[9px] ${activeShoe.id === shoe.id ? 'text-white/60' : 'text-muted'}`}>{String(index + 1).padStart(2, '0')}</span>

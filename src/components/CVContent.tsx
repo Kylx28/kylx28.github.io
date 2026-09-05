@@ -11,17 +11,17 @@ export function CVContent({ embedded = false }: { embedded?: boolean }) {
           <h2 className="text-4xl font-medium tracking-[-0.045em] sm:text-5xl">{profile.name}</h2>
           {/* <p className="mt-4 max-w-xl text-base leading-7 text-muted">{profile.affiliation}</p> */}
         </div>
-        <a href={profile.cvPdf} target="_blank" rel="noreferrer" className="inline-flex w-fit items-center gap-2 border border-ink bg-ink px-4 py-3 font-mono text-[10px] uppercase tracking-[0.12em] text-white transition-colors hover:bg-white hover:text-ink"><ExternalLink size={13} /> View PDF</a>
+        <a href={profile.cvPdf} target="_blank" rel="noreferrer" className="inline-flex w-fit items-center gap-2 bg-signal px-4 py-3 font-mono text-[10px] uppercase tracking-[0.12em] text-white transition-colors hover:bg-ink"><ExternalLink size={13} /> View PDF</a>
       </header>
 
-      <div className="grid gap-12 py-10 lg:grid-cols-[1fr_280px] lg:gap-20">
+      <div className="grid gap-12 py-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-20 xl:gap-28">
         <div>
           {cvSections.map((section, sectionIndex) => (
             <section key={section.title} className={sectionIndex ? 'mt-14' : ''}>
               <div className="mb-2 border-b border-ink pb-3"><h3 className="text-xl font-medium">{section.title}</h3></div>
               {section.items.map((item) => (
                 <article key={`${item.period}-${item.title}`} className="grid gap-3 border-b border-line py-6 sm:grid-cols-[130px_1fr]">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.08em] text-muted">{item.period}</p>
+                  <p className="font-mono text-[11px] tracking-[0.01em] text-muted">{item.period}</p>
                   <div>
                     <div className="mb-2 flex flex-col justify-between gap-1 sm:flex-row">
                       <h4 className="font-medium">
@@ -29,8 +29,8 @@ export function CVContent({ embedded = false }: { embedded?: boolean }) {
                       </h4>
                       <span className="text-sm text-muted">{item.place}</span>
                     </div>
-                    <p className="max-w-xl text-sm leading-6 text-muted">{item.detail}</p>
-                    {item.tags && <div className="mt-3 flex flex-wrap gap-2">{item.tags.map((tag) => <span key={tag} className="border border-line px-2 py-1 font-mono text-[9px] uppercase tracking-wider text-muted">{tag}</span>)}</div>}
+                    <p className="max-w-3xl text-sm leading-6 text-muted">{item.detail}</p>
+                    {item.tags && <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">{item.tags.map((tag) => <span key={tag} className="font-mono text-[10px] tracking-[0.01em] text-signal">{tag}</span>)}</div>}
                   </div>
                 </article>
               ))}

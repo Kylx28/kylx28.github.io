@@ -54,7 +54,7 @@ export function HomePage() {
             <div className="flex flex-wrap gap-x-6 gap-y-3">
               <a href={profile.links.email} className="text-sm text-muted transition-colors hover:text-ink">{profile.emailLabel}</a>
               {Object.entries(profile.links).filter(([label]) => label !== 'email').map(([label, url]) => (
-                <a key={label} href={url} target={url.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="text-link capitalize">{label}<ArrowUpRight size={13} /></a>
+                <a key={label} href={url} target={url.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="text-link">{label === 'github' ? 'GitHub' : label === 'linkedin' ? 'LinkedIn' : label}<ArrowUpRight size={13} /></a>
               ))}
               <Link to="/?section=cv" className="text-link">CV <ArrowUpRight size={13} /></Link>
             </div>

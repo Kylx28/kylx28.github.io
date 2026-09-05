@@ -25,10 +25,10 @@ export function ProjectIndex() {
       </div>
 
       <div className="grid gap-x-7 gap-y-12 pt-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-9 xl:gap-y-14 2xl:grid-cols-4">
-        {sortedProjects.map((project, index) => (
-          <article key={project.slug} className={`min-w-0 ${index === 0 ? 'sm:col-span-2' : ''}`}>
+        {sortedProjects.map((project) => (
+          <article key={project.slug} className="min-w-0">
             <Link to={`/project/${project.slug}`} className="group block">
-              <ProjectVisual project={project} />
+              <ProjectVisual project={project} square={project.slug === 'gaussian-splatting-pipeline'} />
             </Link>
 
             <div className="pt-5">

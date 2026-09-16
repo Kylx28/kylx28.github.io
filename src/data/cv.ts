@@ -16,7 +16,7 @@ export const cvSections: Array<{ title: string; items: CVItem[] }> = [
   ] },
   { title: 'Research', items: [
     { period: 'May 2026 — Now', title: 'Reinforcement Learning Research Intern ', place: 'National University of Singapore', detail: 'Residual reinforcement learning for continuous-space multi agent pathfinding.', tags: ['Python', 'PyTorch', 'RL'] },
-    { period: 'May 2024 — September 2024', title: 'Wireless Communications Research Intern', place: 'University of Toronto', detail: 'Localization and tracking using reconfigurable intelligence surfaces in 6G wireless networks.', tags: ['MATLAB']},
+    { period: 'May 2024 — September 2024', title: 'Wireless Localization Research Intern', place: 'University of Toronto', detail: 'Localization and tracking using reconfigurable intelligence surfaces in 6G wireless networks.', tags: ['MATLAB']},
   ] },
   { title: 'Design Team', items: [
     {period: 'September 2023 - December 2025', title: 'Autonomous Drone Racing Team Member', place: 'University of Toronto', detail: 'Implemented state estimation and localization algorithms for autonomous drones.', tags: ['C++', 'ROS', 'OpenCV']}
@@ -28,7 +28,7 @@ export const cvSections: Array<{ title: string; items: CVItem[] }> = [
 
 export const skills = [
   { group: 'Languages', values: ['Python', 'C++', 'C', 'MATLAB', 'Java', 'Verilog'] },
-  { group: 'Robotics', values: ['ROS', 'SLAM', 'OpenCV'] },
-  { group: 'ML / AI', values: ['PyTorch', 'Hugging Face', 'vLLM'] },
+  { group: 'Robotics', values: ['ROS', 'OpenCV'] },
+  { group: 'ML / AI', values: ['PyTorch', 'Hugging Face', 'vLLM', 'Weights & Biases'] },
   { group: 'Systems', values: ['Linux', 'Docker', 'Ray', 'Distributed Deep Learning'] },
 ]

@@ -16,11 +16,11 @@ export function ProjectPage() {
     <article className="page-shell pt-10 sm:pt-16">
       <Link to="/" className="mb-12 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.12em] text-muted hover:text-ink"><ArrowLeft size={13} /> All projects</Link>
 
-      <header className="grid gap-9 border-b border-ink pb-10 lg:grid-cols-[1.35fr_0.65fr] lg:gap-24">
+      <header className="grid gap-8 pb-8 lg:grid-cols-[1.35fr_0.65fr] lg:gap-16">
         <div>
           <p className="eyebrow mb-5">{project.year}</p>
-          <h1 className="max-w-3xl text-4xl font-medium leading-[1] tracking-[-0.05em] sm:text-5xl lg:text-6xl">{project.title}</h1>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-muted">{project.description}</p>
+          <h1 className="max-w-3xl text-3xl font-medium leading-[1.05] tracking-[-0.045em] sm:text-4xl lg:text-5xl">{project.title}</h1>
+          <p className="mt-5 max-w-2xl text-base leading-7 text-muted">{project.description}</p>
         </div>
         <div className="self-end">
           {project.status && <p className="mb-5 w-fit border border-line px-2 py-1 font-mono text-[9px] uppercase tracking-[0.12em] text-muted">{project.status}</p>}

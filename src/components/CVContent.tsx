@@ -4,23 +4,23 @@ import { profile } from '../data/profile'
 
 export function CVContent({ embedded = false }: { embedded?: boolean }) {
   return (
-    <section id={embedded ? 'cv' : undefined} className={embedded ? 'scroll-mt-20 pt-20 sm:pt-24' : 'pt-12 sm:pt-20'}>
-      <header className="grid gap-8 border-b border-ink pb-8 md:grid-cols-[1fr_auto] md:items-end">
+    <section id={embedded ? 'cv' : undefined} className={embedded ? 'scroll-mt-16 pt-16 sm:pt-20' : 'pt-12 sm:pt-16'}>
+      <header className="grid gap-6 pb-6 md:grid-cols-[1fr_auto] md:items-end">
         <div>
           {/* <p className="eyebrow mb-4">Resume</p> */}
-          <h2 className="text-4xl font-medium tracking-[-0.045em] sm:text-5xl">{profile.name}</h2>
+          <h2 className="text-3xl font-medium tracking-[-0.04em] sm:text-4xl">{profile.name}</h2>
           {/* <p className="mt-4 max-w-xl text-base leading-7 text-muted">{profile.affiliation}</p> */}
         </div>
         <a href={profile.cvPdf} target="_blank" rel="noreferrer" className="inline-flex w-fit items-center gap-2 bg-signal px-4 py-3 font-mono text-[10px] uppercase tracking-[0.12em] text-white transition-colors hover:bg-ink"><ExternalLink size={13} /> View PDF</a>
       </header>
 
-      <div className="grid gap-12 py-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-20 xl:gap-28">
+      <div className="py-8">
         <div>
           {cvSections.map((section, sectionIndex) => (
-            <section key={section.title} className={sectionIndex ? 'mt-14' : ''}>
-              <div className="mb-2 border-b border-ink pb-3"><h3 className="text-xl font-medium">{section.title}</h3></div>
+            <section key={section.title} className={sectionIndex ? 'mt-12' : ''}>
+              <div className="mb-1"><h3 className="text-lg font-medium">{section.title}</h3></div>
               {section.items.map((item) => (
-                <article key={`${item.period}-${item.title}`} className="grid gap-3 border-b border-line py-6 sm:grid-cols-[130px_1fr]">
+                <article key={`${item.period}-${item.title}`} className="grid gap-2 py-5 sm:grid-cols-[120px_1fr]">
                   <p className="font-mono text-[11px] tracking-[0.01em] text-muted">{item.period}</p>
                   <div>
                     <div className="mb-2 flex flex-col justify-between gap-1 sm:flex-row">
@@ -38,24 +38,25 @@ export function CVContent({ embedded = false }: { embedded?: boolean }) {
           ))}
         </div>
 
-        <aside className="lg:sticky lg:top-24 lg:self-start">
-          <section>
-            <h3 className="mb-4 border-b border-ink pb-3 text-xl font-medium">Skills</h3>
+        <section className="mt-12" aria-labelledby="skills-title">
+          <h3 id="skills-title" className="mb-4 text-lg font-medium">Skills</h3>
+          <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
             {skills.map((skill) => (
-              <div key={skill.group} className="border-b border-line py-4">
+              <div key={skill.group}>
                 <p className="eyebrow mb-2">{skill.group}</p>
                 <p className="text-sm leading-6 text-muted">{skill.values.join(' · ')}</p>
               </div>
             ))}
-          </section>
-          <section className="mt-10">
-            <h3 className="eyebrow mb-3">Contact</h3>
-            <div className="flex flex-col items-start gap-3">
-              <a href={profile.links.email} className="text-link">{profile.emailLabel}</a>
-              <a href={profile.links.linkedin} target="_blank" rel="noreferrer" className="text-link">LinkedIn <ExternalLink size={13} /></a>
-            </div>
-          </section>
-        </aside>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h3 className="eyebrow mb-3">Contact</h3>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+            <a href={profile.links.email} className="text-link">{profile.emailLabel}</a>
+            <a href={profile.links.linkedin} target="_blank" rel="noreferrer" className="text-link">LinkedIn <ExternalLink size={13} /></a>
+          </div>
+        </section>
       </div>
     </section>
   )

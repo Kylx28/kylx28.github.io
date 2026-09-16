@@ -1,7 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
-import { Navigation } from './components/Navigation'
 import { Footer } from './components/Footer'
 import { HomePage } from './pages/HomePage'
 import { ProjectPage } from './pages/ProjectPage'
@@ -18,8 +17,7 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-paper pb-16 sm:pb-0">
-      <Navigation />
+    <div className="min-h-screen bg-paper">
       <AnimatePresence mode="wait">
         <motion.main
           key={location.pathname}

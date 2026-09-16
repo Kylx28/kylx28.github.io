@@ -56,9 +56,9 @@ export function InterestsPage() {
     <div className="page-shell py-24 sm:py-28">
       <Link to="/" className="text-link mb-12"><ArrowLeft size={13} /> Back to home</Link>
 
-      <header className="border-b border-ink pb-8">
+      <header className="pb-6">
         {/* <p className="eyebrow mb-4">Away from the keyboard</p> */}
-        <h1 className="text-4xl font-medium tracking-[-0.045em] sm:text-6xl">Other interests</h1>
+        <h1 className="text-3xl font-medium tracking-[-0.04em] sm:text-5xl">Other interests</h1>
       </header>
 
       <section id="shoe-splats" className="scroll-mt-10 py-12 sm:py-16">

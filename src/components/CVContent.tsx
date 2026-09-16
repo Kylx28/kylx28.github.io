@@ -17,10 +17,10 @@ export function CVContent({ embedded = false }: { embedded?: boolean }) {
       <div className="py-8">
         <div>
           {cvSections.map((section, sectionIndex) => (
-            <section key={section.title} className={sectionIndex ? 'mt-12' : ''}>
+            <section key={section.title} className={sectionIndex ? 'mt-6' : ''}>
               <div className="mb-1"><h3 className="text-lg font-medium">{section.title}</h3></div>
               {section.items.map((item) => (
-                <article key={`${item.period}-${item.title}`} className="grid gap-2 py-5 sm:grid-cols-[120px_1fr]">
+                <article key={`${item.period}-${item.title}`} className="grid gap-2 py-4 sm:grid-cols-[120px_1fr]">
                   <p className="font-mono text-[11px] tracking-[0.01em] text-muted">{item.period}</p>
                   <div>
                     <div className="mb-2 flex flex-col justify-between gap-1 sm:flex-row">
@@ -38,7 +38,7 @@ export function CVContent({ embedded = false }: { embedded?: boolean }) {
           ))}
         </div>
 
-        <section className="mt-12" aria-labelledby="skills-title">
+        <section className="mt-8" aria-labelledby="skills-title">
           <h3 id="skills-title" className="mb-4 text-lg font-medium">Skills</h3>
           <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
             {skills.map((skill) => (
@@ -50,13 +50,6 @@ export function CVContent({ embedded = false }: { embedded?: boolean }) {
           </div>
         </section>
 
-        <section className="mt-10">
-          <h3 className="eyebrow mb-3">Contact</h3>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-            <a href={profile.links.email} className="text-link">{profile.emailLabel}</a>
-            <a href={profile.links.linkedin} target="_blank" rel="noreferrer" className="text-link">LinkedIn <ExternalLink size={13} /></a>
-          </div>
-        </section>
       </div>
     </section>
   )

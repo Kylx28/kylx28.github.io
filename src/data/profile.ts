@@ -12,7 +12,7 @@ export const profile = {
     { text: 'I\'m a fourth-year Computer Engineering student at the ' },
     { text: 'University of Toronto', emphasis: true },
     { text: ', specializing in machine learning and control systems. My interests include robotic control and deep learning for robotics.' },
-    { text: ' I\'ve also worked on optimizing training and inference systems for LLMs.'},
+    { text: ' I\'ve also worked on training and inference infrastructure for MoE LLMs.'},
     { text: 'Currently: researching multi-agent reinforcement learning at ', newLine: true },
     { text: 'MARMoT Lab (NUS)', emphasis: true, href: 'https://marmotlab.org/index.html' },
     { text: '.' },

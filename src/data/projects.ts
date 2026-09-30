@@ -9,12 +9,14 @@ export interface Project {
   title: string
   description: string
   year: string
+  order?: number
   categories: ProjectCategory[]
   tags: string[]
   status?: string
   featured?: boolean
   thumbnail: string
   links?: ProjectLink[]
+  inspiration?: ProjectLink[]
   sections: ProjectSection[]
   metrics?: ProjectMetric[]
   splat?: { src: string; poster: string }
@@ -30,6 +32,7 @@ export const projects: Project[] = [
     title: 'Object-Centric Gaussian Splatting Pipeline',
     description: 'An end-to-end pipeline for reconstructing isolated objects as interactive 3D Gaussian splats from handheld image captures.',
     year: '2026',
+    order: 2,
     categories: ['Computer Vision', 'AI / ML'],
     tags: ['Python', 'COLMAP', 'SAM 2', 'gsplat'],
     status: 'In Progress',
@@ -40,6 +43,29 @@ export const projects: Project[] = [
       { title: 'Overview', body: 'Built a reproducible capture-to-web workflow for reconstructing individual objects from a handheld image sequence and publishing the result as an interactive Gaussian splat.' },
       { title: 'Pipeline', body: 'The pipeline combines COLMAP camera reconstruction, SAM 2 foreground masks, masked gsplat training, and multi-view pruning to remove background floaters while preserving object detail.' },
       { title: 'Web delivery', body: 'Pruned PLY output is transcoded to the compact SPZ format and loaded on demand in the browser. The interactive Onitsuka Tiger capture is available in the Other Interests section.' },
+    ],
+  },
+  {
+    slug: 'robot-get-up-action-priors',
+    title: 'Humanoid Robot Get-Up Using Action Priors',
+    description: 'Training a Unitree G1 humanoid to stand from fallen poses using demonstration-guided reinforcement learning in MuJoCo.',
+    year: '2026',
+    order: 1,
+    categories: ['Robotics', 'AI / ML', 'Research'],
+    tags: ['PyTorch', 'MuJoCo', 'PPO'],
+    status: 'In Progress',
+    featured: true,
+    thumbnail: asset('images/mujoco-human.png'),
+    links: [{ label: 'GitHub', url: 'https://github.com/Kylx28/apex-robot-getup' }],
+    inspiration: [
+      { label: 'Demonstration-Guided Humanoid Stand-Up on an Emulated Deformable Surface', url: 'https://arxiv.org/pdf/2608.20852' },
+      { label: 'APEX: Action Priors Enable Efficient Exploration for Robust Motion Tracking on Legged Robots', url: 'https://arxiv.org/pdf/2505.10022' },
+    ],
+    sections: [
+      { title: 'Overview', body: 'A MuJoCo research project for training the 29-DoF Unitree G1 to stand from supine and prone fallen poses. The goal is to use demonstration-derived action priors during exploration while producing a final end-to-end reference free policy.' },
+      { title: 'Simulation and Reference Trajectories', body: 'The project includes a deterministic G1 environment with normalized joint-position actions, joint-space PD control, and tooling to load, preprocess, calibrate, and replay get-up motions from the BONES-SEED dataset.' },
+      { title: 'Training Environment', body: 'Residual policy is trained using PPO and is used to correct an existing reference trajectory. Training supports CUDA execution in vectorized MuJoCo environments.' },
+      { title: 'Current Direction and Next Steps', body: 'Current work focuses on robust demonstration-guided stand-up behavior. Planned extensions include decaying action priors during training, multiple critics, randomized initial falls, and domain randomization.' },
     ],
   },
   {

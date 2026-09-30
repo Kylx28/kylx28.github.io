@@ -15,7 +15,9 @@ export function ProjectIndex() {
   const sortedProjects = [...projects].sort((a, b) => {
     const progressDifference = statusOrder(a.status) - statusOrder(b.status)
     if (progressDifference !== 0) return progressDifference
-    return Number.parseInt(b.year, 10) - Number.parseInt(a.year, 10)
+    const yearDifference = Number.parseInt(b.year, 10) - Number.parseInt(a.year, 10)
+    if (yearDifference !== 0) return yearDifference
+    return (a.order ?? Number.POSITIVE_INFINITY) - (b.order ?? Number.POSITIVE_INFINITY)
   })
 
   return (

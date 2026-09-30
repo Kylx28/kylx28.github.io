@@ -7,6 +7,14 @@ export interface CVItem {
   url?: string
 }
 
+export interface SelectedCourse {
+  code: string
+  name: string
+  description: string
+  url: string
+  category: 'Machine Learning & AI' | 'Controls & Robotics' | 'Math'
+}
+
 export const cvSections: Array<{ title: string; items: CVItem[] }> = [
   { title: 'Education', items: [
     { period: '2022 — 2027', title: 'BASc, Computer Engineering', place: 'University of Toronto', detail: 'Concentration in robotics, control systems, and AI.' },
@@ -26,9 +34,75 @@ export const cvSections: Array<{ title: string; items: CVItem[] }> = [
   ] },
 ]
 
+export const selectedCourses: SelectedCourse[] = [
+  {
+    code: 'ECE367',
+    name: 'Matrix Algebra & Optimization',
+    description: 'Linear algebra and matrix decompositions; unconstrained and constrained linear/nonlinear optimization.',
+    url: 'https://engineering.calendar.utoronto.ca/course/ece367h1',
+    category: 'Math',
+  },
+  {
+    code: 'ECE368',
+    name: 'Probabilistic Reasoning',
+    description: 'Probabilistic modeling and inference using multivariate Gaussian models, hidden Markov models, factor graphs, hypothesis testing, estimation, marginalization, and message passing.',
+    url: 'https://engineering.calendar.utoronto.ca/course/ece368h1',
+    category: 'Math',
+  },
+  {
+    code: 'ECE421',
+    name: 'Introduction to Machine Learning',
+    description: 'Machine learning fundamentals covering supervised and unsupervised methods, neural networks, SVMs, PCA, clustering, Gaussian mixtures, generalization theory, and regularization.',
+    url: 'https://engineering.calendar.utoronto.ca/course/ece421h1',
+    category: 'Machine Learning & AI',
+  },
+  {
+    code: 'APS360',
+    name: 'Applied Fundamentals of Deep Learning',
+    description: 'Applied deep learning covering neural networks, autoencoders, recurrent models, transformers, GANs, and GNNs. Also features a team-based course project.',
+    url: 'https://engineering.calendar.utoronto.ca/course/aps360h1',
+    category: 'Machine Learning & AI',
+  },
+  {
+    code: 'CSC384',
+    name: 'Introduction to Artificial Intelligence',
+    description: 'Artificial intelligence fundamentals covering search, logical reasoning, automated planning, probabilistic reasoning, learning, and decision-making under uncertainty.',
+    url: 'https://artsci.calendar.utoronto.ca/course/csc384h1',
+    category: 'Machine Learning & AI',
+  },
+  {
+    code: 'CSC413',
+    name: 'Neural Networks and Deep Learning',
+    description: 'A rigorous treatment of neural networks and deep learning.',
+    url: 'https://artsci.calendar.utoronto.ca/course/csc413h1',
+    category: 'Machine Learning & AI',
+  },
+  {
+    code: 'ECE410',
+    name: 'Linear Control Systems',
+    description: 'Linear state-space control covering stability, controllability, observability, state feedback, observers, tracking, and LQR optimal control.',
+    url: 'https://engineering.calendar.utoronto.ca/course/ece410h1',
+    category: 'Controls & Robotics',
+  },
+  {
+    code: 'ECE470',
+    name: 'Robot Modeling and Control',
+    description: 'Robot manipulator kinematics, trajectory and path planning, dynamics, and nonlinear control methods including computed torque, passivity-based control, and feedback linearization.',
+    url: 'https://engineering.calendar.utoronto.ca/course/ece470h1',
+    category: 'Controls & Robotics',
+  },
+  {
+    code: 'MAT336',
+    name: 'Elements of Analysis',
+    description: 'Introduction to real analysis.',
+    url: 'https://artsci.calendar.utoronto.ca/course/mat336h1',
+    category: 'Math',
+  },
+]
+
 export const skills = [
-  { group: 'Languages', values: ['Python', 'C++', 'C', 'MATLAB', 'Java', 'Verilog'] },
-  { group: 'Robotics', values: ['ROS', 'OpenCV'] },
+  { group: 'Languages', values: ['Python', 'C++', 'C', 'MATLAB/Simulink', 'Java', 'Verilog'] },
+  { group: 'Robotics', values: ['ROS', 'OpenCV', 'MuJoCo'] },
   { group: 'ML / AI', values: ['PyTorch', 'Hugging Face', 'vLLM', 'Weights & Biases'] },
   { group: 'Systems', values: ['Linux', 'Docker', 'Ray', 'Distributed Deep Learning'] },
 ]

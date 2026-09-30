@@ -56,12 +56,25 @@ export function ProjectPage() {
       )}
 
       <div className="py-16 sm:py-24">
-        {project.sections.map((section, index) => (
+        {project.sections.map((section) => (
           <section key={section.title} className="grid gap-5 border-t border-line py-9 md:grid-cols-[0.55fr_1.45fr] md:gap-16">
-            <div className="flex gap-5"><span className="font-mono text-[9px] text-muted">{String(index + 1).padStart(2, '0')}</span><h2 className="text-lg font-medium">{section.title}</h2></div>
+            <div><h2 className="text-lg font-medium">{section.title}</h2></div>
             <p className="max-w-2xl text-base leading-7 text-muted">{section.body}</p>
           </section>
         ))}
+
+        {project.inspiration?.length ? (
+          <section className="grid gap-5 border-t border-line py-9 md:grid-cols-[0.55fr_1.45fr] md:gap-16">
+            <div><h2 className="text-lg font-medium">Project Inspiration</h2></div>
+            <div className="space-y-3">
+              {project.inspiration.map((link) => (
+                <a key={link.url} href={link.url} target="_blank" rel="noreferrer" className="flex max-w-2xl items-start gap-2 text-sm font-medium leading-6 text-signal hover:underline hover:underline-offset-4">
+                  {link.label}<ArrowUpRight size={13} className="mt-1 shrink-0" />
+                </a>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         {project.splat && (
           <section className="border-t border-line pt-9">

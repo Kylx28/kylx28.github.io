@@ -64,8 +64,8 @@ export const projects: Project[] = [
     sections: [
       { title: 'Overview', body: 'A MuJoCo research project for training the 29-DoF Unitree G1 to stand from supine and prone fallen poses. The goal is to use demonstration-derived action priors during exploration while producing a final end-to-end reference free policy.' },
       { title: 'Simulation and Reference Trajectories', body: 'The project includes a deterministic G1 environment with normalized joint-position actions, joint-space PD control, and tooling to load, preprocess, calibrate, and replay get-up motions from the BONES-SEED dataset.' },
-      { title: 'Training Environment', body: 'Residual policy is trained using PPO and is used to correct an existing reference trajectory. Training supports CUDA execution in vectorized MuJoCo environments.' },
-      { title: 'Current Direction and Next Steps', body: 'Current work focuses on robust demonstration-guided stand-up behavior. Planned extensions include decaying action priors during training, multiple critics, randomized initial falls, and domain randomization.' },
+      { title: 'Training Environment', body: 'Residual policy is trained using PPO and is used to correct an existing reference trajectory.' },
+      { title: 'Current Direction and Next Steps', body: 'Current work achieves stable standing from supine position using reference demonstrations. Planned extensions include decaying action priors for guided exploration during training, reference-free inference, multiple critics, and domain randomization.' },
     ],
   },
   {
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     thumbnail: asset('images/ensemble_arch.png'),
     links: [{ label: 'GitHub', url: 'https://github.com/vancityaziz/ML-for-Skin-Cancer-Classification' }],
     sections: [
-      {title: 'Overview', body: 'Built an ensemble CNN model in a team of 4, outperforming individual model baselines by +5% accuracy on skin lesion image classification.'}
+      {title: 'Overview', body: 'Trained an ensemble CNN with an expert router, transfer learning, data augmentation, and class rebalancing, achieving 80% balanced accuracy on skin cancer classification and outperforming individual models by 5%.'}
     ],
   },
   {
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     featured: true,
     thumbnail: asset('images/mapping-app.png'),
     sections: [
-      { title: 'Overview', body: 'Collaborated in a team of 3 to build a full-stack mapping application in C++ using the OpenStreetMap API, enabling interactive navigation and route visualization.' },
+      { title: 'Overview', body: 'Collaborated in a team of 3 to build a full-stack mapping application in C++ using the OpenStreetMap API, enabling interactive navigation and route visualization. Implemented A* for pathfinding and simulated annealing for solving traveling salesman-like problems.' },
     ],
   },
   {
@@ -109,7 +109,7 @@ export const projects: Project[] = [
     thumbnail: asset('images/utadr.jpeg'),
     links: [{ label: 'GitHub', url: 'https://github.com/Kylx28/MSCKF_ADR' }],
     sections: [
-      { title: 'Overview', body: 'Team member of the autonomous drone racing team from 2023-2025. Implemented the multi-state constraint kalman filter for drone localization. Conducted literature review and tested other algorithms including VINS-Mono and IMU preintegration.' },
+      { title: 'Overview', body: 'Member of the UofT Autonomous Drone Racing team from 2023-2025. Implemented the multi-state constraint Kalman filter for drone localization. Conducted literature review on state of the art visual-inertial odometry (VIO) algorithms and tested frameworks such as VINS-Mono and OpenVINS. Helped build and setup racing gates for drone testing.' },
     ],
   },
   {

@@ -27,6 +27,7 @@ export const cvSections: Array<{ title: string; items: CVItem[] }> = [
     { period: 'May 2024 — Sept 2024', title: 'Wireless Localization Research Intern', place: 'University of Toronto', detail: 'Localization and tracking using reconfigurable intelligence surfaces in 6G wireless networks.', tags: ['MATLAB']},
   ] },
   { title: 'Design Team', items: [
+    {period: 'Sept 2026 - Now', title: 'aUToronto Motion Prediction Member', place: 'University of Toronto', detail: 'Implemented a ROS 2 motion prediction pipeline in C++, integrating tracked objects and map data with the learned SIMPL model to predict and visualize vehicle and pedestrian trajectories.'},
     {period: 'Sept 2023 - Dec 2025', title: 'Autonomous Drone Racing Team Member', place: 'University of Toronto', detail: 'Implemented state estimation and localization algorithms for autonomous drones.', tags: ['C++', 'ROS', 'OpenCV']}
   ]},
   { title: 'Publications', items: [

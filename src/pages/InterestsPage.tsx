@@ -58,16 +58,15 @@ export function InterestsPage() {
 
       <header className="pb-6">
         {/* <p className="eyebrow mb-4">Away from the keyboard</p> */}
-        <h1 className="text-3xl font-medium tracking-[-0.04em] sm:text-5xl">Other interests</h1>
+        <h1 className="text-3xl font-medium tracking-[-0.04em] sm:text-5xl">Other Interests</h1>
       </header>
 
       <section id="shoe-splats" className="scroll-mt-10 py-12 sm:py-16">
         <div className="mb-7 grid gap-4 md:grid-cols-[1fr_0.7fr] md:items-end">
           <div>
-            <p className="eyebrow mb-3">3D captures / Shoe archive</p>
-            <h2 className="text-2xl font-medium tracking-[-0.03em] sm:text-3xl">Shoes in Gaussian splats</h2>
+            <p className="eyebrow mb-3">Sneaker Archive</p>
+            <h2 className="text-2xl font-medium tracking-[-0.03em] sm:text-3xl">Shoes in Gaussian Splats</h2>
           </div>
-          <p className="text-sm leading-6 text-muted md:text-right">A recreational object-capture experiment. Each scene loads automatically and can be explored in the browser.</p>
         </div>
 
         <div className="mb-7 flex overflow-x-auto border-y border-line [scrollbar-width:none]" aria-label="Select a shoe capture">

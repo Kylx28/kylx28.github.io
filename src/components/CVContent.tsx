@@ -19,7 +19,7 @@ export function CVContent({ embedded = false }: { embedded?: boolean }) {
               <section key={section.title} className={sectionIndex ? 'mt-6' : ''}>
                 <div className="mb-1"><h3 className="text-lg font-medium">{section.title}</h3></div>
                 {section.items.map((item) => (
-                  <article key={`${item.period}-${item.title}`} className="grid gap-2 py-4 sm:grid-cols-[120px_1fr]">
+                  <article key={`${item.period}-${item.title}`} className="grid gap-y-2 py-4 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-x-12">
                     <p className="font-mono text-[11px] tracking-[0.01em] text-muted">{item.period}</p>
                     <div>
                       <div className="mb-2 flex flex-col justify-between gap-1 sm:flex-row">

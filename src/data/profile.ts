@@ -30,5 +30,5 @@ export const profile = {
     linkedin: 'https://www.linkedin.com/in/kylesabado',
   },
   emailLabel: 'kyle.sabado@mail.utoronto.ca',
-  cvPdf: `${import.meta.env.BASE_URL}images/kyle_sabado_resume_short_2026.pdf`,
+  cvPdf: `${import.meta.env.BASE_URL}images/kyle_sabado_resume (8).pdf`,
 }

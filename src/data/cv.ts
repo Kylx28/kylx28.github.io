@@ -23,11 +23,11 @@ export const cvSections: Array<{ title: string; items: CVItem[] }> = [
     { period: 'May 2025 - Apr 2026', title: 'AI Networking Intern', place: 'Huawei Canada', detail: 'Worked on control plane networking solutions for mixture-of-experts LLM training and inference.', tags: ['Python', 'vLLM', 'GPU Cluster'] },
   ] },
   { title: 'Research', items: [
-    { period: 'May 2026 — Now', title: 'Reinforcement Learning Research Intern ', place: 'National University of Singapore', detail: 'Residual reinforcement learning for continuous-space multi agent pathfinding.', tags: ['Python', 'PyTorch', 'RL'] },
+    { period: 'May 2026 — Present', title: 'Reinforcement Learning Research Intern ', place: 'National University of Singapore', detail: 'Residual reinforcement learning for continuous-space multi agent pathfinding.', tags: ['Python', 'PyTorch', 'RL'] },
     { period: 'May 2024 — Sept 2024', title: 'Wireless Localization Research Intern', place: 'University of Toronto', detail: 'Localization and tracking using reconfigurable intelligence surfaces in 6G wireless networks.', tags: ['MATLAB']},
   ] },
   { title: 'Design Team', items: [
-    {period: 'Sept 2026 - Now', title: 'aUToronto Motion Prediction Member', place: 'University of Toronto', detail: 'Implemented a ROS 2 motion prediction pipeline in C++, integrating tracked objects and map data with the learned SIMPL model to predict and visualize vehicle and pedestrian trajectories.'},
+    {period: 'Sept 2026 - Present', title: 'aUToronto Motion Prediction Member', place: 'University of Toronto', detail: 'Implementing motion prediction models for the autonomous driving stack.', tags: ['C++', 'ROS 2', 'PyTorch']},
     {period: 'Sept 2023 - Dec 2025', title: 'Autonomous Drone Racing Team Member', place: 'University of Toronto', detail: 'Implemented state estimation and localization algorithms for autonomous drones.', tags: ['C++', 'ROS', 'OpenCV']}
   ]},
   { title: 'Publications', items: [

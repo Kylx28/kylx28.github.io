@@ -53,7 +53,7 @@ export function HomePage() {
               <Link to="/?section=cv" className="text-link">CV <ArrowUpRight size={13} /></Link>
             </div>
             <div>
-              <Link to="/interests" className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.13em] text-signal hover:text-ink">Other interests <ArrowUpRight size={13} /></Link>
+              <Link to="/interests" className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.13em] text-signal hover:text-ink">Gaussian Splats <ArrowUpRight size={13} /></Link>
             </div>
           </div>
         </div>

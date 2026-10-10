@@ -44,6 +44,19 @@ export function ProjectPage() {
         <ProjectVisual project={project} square={hasSquareThumbnail} />
       </div>
 
+      {project.video && (
+        <section className="max-w-5xl border-t border-line py-9" aria-labelledby="project-video-title">
+          <div className="mb-5">
+            <h2 id="project-video-title" className="text-xl font-medium tracking-[-0.02em]">{project.video.title}</h2>
+          </div>
+          <video className="aspect-video w-full border border-line bg-black" controls playsInline preload="metadata" poster={project.thumbnail}>
+            <source src={project.video.src} type="video/mp4" />
+            Your browser does not support embedded video.
+          </video>
+          {project.video.caption && <p className="mt-3 text-sm leading-6 text-muted">{project.video.caption}</p>}
+        </section>
+      )}
+
       {project.metrics && (
         <section aria-label="Project metrics" className="grid border-y border-line sm:grid-cols-3">
           {project.metrics.map((metric, index) => (

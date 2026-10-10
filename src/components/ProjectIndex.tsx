@@ -30,7 +30,11 @@ export function ProjectIndex() {
         {sortedProjects.map((project) => (
           <article key={project.slug} className="min-w-0">
             <Link to={`/project/${project.slug}`} className="group block">
-              <ProjectVisual project={project} square={project.slug === 'gaussian-splatting-pipeline'} />
+              <ProjectVisual
+                project={project}
+                natural={project.slug !== 'gaussian-splatting-pipeline'}
+                square={project.slug === 'gaussian-splatting-pipeline'}
+              />
             </Link>
 
             <div className="pt-5">

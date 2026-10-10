@@ -19,6 +19,7 @@ export interface Project {
   inspiration?: ProjectLink[]
   sections: ProjectSection[]
   metrics?: ProjectMetric[]
+  video?: { src: string; title: string; caption?: string }
   splat?: { src: string; poster: string }
 }
 
@@ -56,6 +57,11 @@ export const projects: Project[] = [
     status: 'In Progress',
     featured: true,
     thumbnail: asset('images/mujoco-human.png'),
+    video: {
+      src: asset('videos/final_evaluation_supine_slerp.mp4'),
+      title: 'Supine Get-Up Evaluation',
+      caption: 'Evaluation rollout of the humanoid standing from an initial supine position.',
+    },
     links: [{ label: 'GitHub', url: 'https://github.com/Kylx28/apex-robot-getup' }],
     inspiration: [
       { label: 'Demonstration-Guided Humanoid Stand-Up on an Emulated Deformable Surface', url: 'https://arxiv.org/pdf/2608.20852' },

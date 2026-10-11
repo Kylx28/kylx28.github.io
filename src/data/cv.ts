@@ -17,7 +17,7 @@ export interface SelectedCourse {
 
 export const cvSections: Array<{ title: string; items: CVItem[] }> = [
   { title: 'Education', items: [
-    { period: '2022 — 2027', title: 'BASc, Computer Engineering', place: 'University of Toronto', detail: 'Concentration in robotics, control systems, and AI.' },
+    { period: '2022 — 2027', title: 'BASc, Computer Engineering', place: 'University of Toronto', detail: 'Coursework in linear algebra, probability, analysis, control systems, deep learning, and robotics.' },
   ] },
   { title: 'Experience', items: [
     { period: 'May 2025 - Apr 2026', title: 'AI Networking Intern', place: 'Huawei Canada', detail: 'Worked on control plane networking solutions for mixture-of-experts LLM training and inference.', tags: ['Python', 'vLLM', 'GPU Cluster'] },

@@ -11,8 +11,9 @@ export const profile = {
   bio: [
     { text: 'I\'m a fourth-year Computer Engineering student at the ' },
     { text: 'University of Toronto', emphasis: true },
-    { text: ', specializing in machine learning and control systems. My interests include robot control and deep learning for robotics.' },
-    { text: ' I\'ve also worked on training and inference infrastructure for MoE LLMs.'},
+    { text: ', with a minor in Robotics. My interests are in deep learning for robotics and autonomous vehicles, ' },
+    {text: 'particularly learning-based prediction, planning, and control. '},
+    { text: ' I also have experience working on training and inference infrastructure for large language models.'},
     { text: 'Currently: researching multi-agent reinforcement learning at ', newLine: true },
     { text: 'MARMoT Lab (NUS)', emphasis: true, href: 'https://marmotlab.org/index.html' },
     { text: '.' },

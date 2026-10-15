@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 
-export default function GaussianSplatCanvas({ src, onError }: { src: string; onError: () => void }) {
+export default function GaussianSplatCanvas({ src, cameraAzimuth = 0, onError }: { src: string; cameraAzimuth?: number; onError: () => void }) {
   const containerRef = useRef<HTMLDivElement>(null)
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null)
   const controlsRef = useRef<OrbitControls | null>(null)
@@ -91,7 +91,9 @@ export default function GaussianSplatCanvas({ src, onError }: { src: string; onE
         const center = bounds.getCenter(new THREE.Vector3())
         const size = bounds.getSize(new THREE.Vector3())
         const radius = Math.max(size.length() * 0.5, 0.25)
-        const cameraPosition = center.clone().add(new THREE.Vector3(radius * 1.15, -radius * 2.1, radius * 0.9))
+        const cameraOffset = new THREE.Vector3(radius * 1.15, -radius * 2.1, radius * 0.9)
+        cameraOffset.applyAxisAngle(new THREE.Vector3(0, 0, 1), cameraAzimuth)
+        const cameraPosition = center.clone().add(cameraOffset)
         controls.target.copy(center)
         camera.position.copy(cameraPosition)
         camera.near = Math.max(radius / 100, 0.001)
@@ -133,7 +135,7 @@ export default function GaussianSplatCanvas({ src, onError }: { src: string; onE
       controlsRef.current = null
       cameraRef.current = null
     }
-  }, [src, onError])
+  }, [src, cameraAzimuth, onError])
 
   const reset = () => {
     const camera = cameraRef.current

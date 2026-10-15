@@ -6,6 +6,7 @@ const GaussianSplatCanvas = lazy(() => import('./GaussianSplatCanvas'))
 export interface GaussianSplatViewerProps {
   src: string
   poster: string
+  cameraAzimuth?: number
   className?: string
 }
 
@@ -20,7 +21,7 @@ function LoadingPanel() {
   )
 }
 
-export function GaussianSplatViewer({ src, poster, className = '' }: GaussianSplatViewerProps) {
+export function GaussianSplatViewer({ src, poster, cameraAzimuth = 0, className = '' }: GaussianSplatViewerProps) {
   const [failed, setFailed] = useState(false)
 
   if (failed) {
@@ -44,7 +45,7 @@ export function GaussianSplatViewer({ src, poster, className = '' }: GaussianSpl
   return (
     <div className={`relative aspect-[16/10] overflow-hidden border border-line bg-[#111] ${className}`}>
       <Suspense fallback={<LoadingPanel />}>
-        <GaussianSplatCanvas src={src} onError={() => setFailed(true)} />
+        <GaussianSplatCanvas src={src} cameraAzimuth={cameraAzimuth} onError={() => setFailed(true)} />
       </Suspense>
       <div className="pointer-events-none absolute left-3 top-3 border border-white/20 bg-black/60 px-2 py-1 font-mono text-[9px] uppercase tracking-[0.12em] text-white/80 backdrop-blur-sm">Drag to orbit · Scroll to zoom</div>
     </div>

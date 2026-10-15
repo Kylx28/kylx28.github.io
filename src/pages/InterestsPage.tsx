@@ -1,5 +1,5 @@
 import { ArrowLeft } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { GaussianSplatViewer } from '../components/GaussianSplatViewer'
 
@@ -11,6 +11,13 @@ const shoeCaptures = [
     label: 'Onitsuka Tiger',
     src: asset('splats/onitsuka-tiger.spz?v=uncompressed-ply-sh3-20260828'),
     poster: asset('images/onitsuka-tiger.jpg'),
+  },
+  {
+    id: 'nike-dunks',
+    label: 'Nike Dunks',
+    src: asset('splats/dunks.spz?v=sh3-20261015'),
+    poster: asset('images/nike-dunks.png'),
+    cameraAzimuth: Math.PI,
   },
 ]
 
@@ -41,14 +48,11 @@ const shoeCaptures = [
 
 export function InterestsPage() {
   const { search } = useLocation()
-  const [selectedShoe, setSelectedShoe] = useState(shoeCaptures[0].id)
-  const activeShoe = shoeCaptures.find((shoe) => shoe.id === selectedShoe) ?? shoeCaptures[0]
 
   useEffect(() => {
     const requestedShoe = new URLSearchParams(search).get('view')
     if (requestedShoe && shoeCaptures.some((shoe) => shoe.id === requestedShoe)) {
-      setSelectedShoe(requestedShoe)
-      window.setTimeout(() => document.getElementById('shoe-splats')?.scrollIntoView(), 0)
+      window.setTimeout(() => document.getElementById(`shoe-${requestedShoe}`)?.scrollIntoView(), 0)
     }
   }, [search])
 
@@ -69,26 +73,21 @@ export function InterestsPage() {
           </div>
         </div>
 
-        <div className="mb-7 flex overflow-x-auto border-y border-line [scrollbar-width:none]" aria-label="Select a shoe capture">
+        <div className="space-y-12 sm:space-y-16">
           {shoeCaptures.map((shoe, index) => (
-            <button
+            <article
               key={shoe.id}
-              type="button"
-              onClick={() => setSelectedShoe(shoe.id)}
-              className={`flex min-w-[190px] items-center gap-4 border-r border-line px-4 py-4 text-left transition-colors ${activeShoe.id === shoe.id ? 'bg-signal text-white' : 'bg-surface hover:bg-paper'}`}
-              aria-pressed={activeShoe.id === shoe.id}
+              id={`shoe-${shoe.id}`}
+              className="scroll-mt-10"
             >
-              <span className={`font-mono text-[9px] ${activeShoe.id === shoe.id ? 'text-white/60' : 'text-muted'}`}>{String(index + 1).padStart(2, '0')}</span>
-              <span className="text-sm font-medium">{shoe.label}</span>
-            </button>
+              <div className="mb-4 flex items-baseline gap-4 border-t border-line pt-4">
+                <span className="font-mono text-[9px] text-muted">{String(index + 1).padStart(2, '0')}</span>
+                <h3 className="text-lg font-medium">{shoe.label}</h3>
+              </div>
+              <GaussianSplatViewer src={shoe.src} poster={shoe.poster} cameraAzimuth={shoe.cameraAzimuth} />
+            </article>
           ))}
         </div>
-
-        <GaussianSplatViewer
-          key={activeShoe.id}
-          src={activeShoe.src}
-          poster={activeShoe.poster}
-        />
       </section>
 
       {/* <section className="border-t border-ink py-12 sm:py-16" aria-labelledby="reading-list-title">

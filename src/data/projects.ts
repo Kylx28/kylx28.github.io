@@ -38,7 +38,7 @@ export const projects: Project[] = [
     tags: ['Python', 'COLMAP', 'SAM 2', 'gsplat'],
     status: 'In Progress',
     featured: true,
-    thumbnail: asset('images/onitsuka-tiger.jpg'),
+    thumbnail: asset('images/gaussian-splatting-thumbnail.png'),
     links: [{ label: 'View interactive shoe splat', url: '/interests?view=onitsuka-tiger' }],
     sections: [
       { title: 'Overview', body: 'Built a reproducible capture-to-web workflow for reconstructing individual objects from a handheld image sequence and publishing the result as an interactive Gaussian splat.' },
